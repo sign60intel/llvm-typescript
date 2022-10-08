@@ -7,7 +7,7 @@
 #===------------------------------------------------------------------------===#
 
 ### add_subdirectory(bbc)
-### add_subdirectory(f18)
+add_subdirectory(ts18) ### f18
 ### add_subdirectory(tslang-driver)
 ### add_subdirectory(tco)
 ### add_subdirectory(f18-parse-demo)

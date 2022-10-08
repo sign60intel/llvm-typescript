@@ -64,6 +64,14 @@ def FlangOption : OptionFlag;
 // available for Clang)
 def FlangOnlyOption : OptionFlag;
 
+// TSlangOption - This is considered a "core" TSlang option, available in
+// TSlang mode.
+def TSlangOption : OptionFlag;
+
+// TSlangOnlyOption - This option should only be used by TSlang (i.e. it is not
+// available for Clang)
+def TSlangOnlyOption : OptionFlag;
+
 // FC1Option - This option should be accepted by flang -fc1.
 def FC1Option : OptionFlag;
 
@@ -4638,6 +4646,16 @@ def Xflang : Separate<["-"], "Xflang">,
   HelpText<"Pass <arg> to the flang compiler">, MetaVarName<"<arg>">,
   Flags<[NoXarchOption, CoreOption]>, Group<CompileOnly_Group>;
 }
+
+//===----------------------------------------------------------------------===//
+// TSLangOption + CoreOption + NoXarchOption
+//===----------------------------------------------------------------------===//
+let Flags = [TSlangOption, TSlangOnlyOption, NoXarchOption, CoreOption] in {
+def Xtslang : Separate<["-"], "Xtslang">,
+  HelpText<"Pass <arg> to the tslang compiler">, MetaVarName<"<arg>">,
+  Flags<[NoXarchOption, CoreOption]>, Group<CompileOnly_Group>;
+}
+
 
 //===----------------------------------------------------------------------===//
 // FlangOption and FC1 Options
