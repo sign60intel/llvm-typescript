@@ -6,14 +6,14 @@
   
 -->
 
-# Flang C++ Style Guide
+# TSlang C++ Style Guide
 
 ```eval_rst
 .. contents::
    :local:
 ```
 
-This document captures the style guide rules that are followed in the Flang codebase.
+This document captures the style guide rules that are followed in the TSlang codebase.
 
 ## In brief:
 * Use *clang-format*
@@ -38,7 +38,7 @@ unless they introduce ambiguity.
 
 ### Error messages
 1. Messages should be a single sentence with few exceptions.
-1. Fortran keywords should appear in upper case.
+1. TypeScript keywords should appear in upper case.
 1. Names from the program appear in single quotes.
 1. Messages should start with a capital letter.
 1. Messages should not end with a period.
@@ -68,11 +68,11 @@ remove the inclusion before committing.
 
 ### Naming
 1. C++ names that correspond to well-known interfaces from the STL, LLVM,
-and Fortran standard
+and TypeScript standard
 can and should look like their models when the reader can safely assume that
 they mean the same thing -- e.g., `clear()` and `size()` member functions
 in a class that implements an STL-ish container.
-Fortran intrinsic function names are conventionally in ALL CAPS.
+TypeScript intrinsic function names are conventionally in ALL CAPS.
 1. Non-public data members should be named with leading miniscule (lower-case)
 letters, internal camelCase capitalization, and a trailing underscore,
 e.g. `DoubleEntryBookkeepingSystem myLedger_;`.  POD structures with
@@ -160,7 +160,7 @@ that the function's result type is a `std::optional<>`.
 When `int` just obviously works, just use `int`.  When you need something
 bigger than `int`, use `std::int64_t` rather than `long` or `long long`.
 1. Use namespaces to avoid conflicts with client code.  Use one top-level
-`Fortran` project namespace.  Don't introduce needless nested namespaces within the
+`TypeScript` project namespace.  Don't introduce needless nested namespaces within the
 project when names don't conflict or better solutions exist.  Never use
 `using namespace ...;` outside test code; never use `using namespace std;`
 anywhere.  Access STL entities with names like `std::unique_ptr<>`,
