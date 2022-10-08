@@ -1,0 +1,13 @@
+# This file allows users to call find_package(TSlang) and pick up our targets.
+
+@TSLANG_CONFIG_CODE@
+
+find_package(LLVM REQUIRED CONFIG
+             HINTS "@TSLANG_CONFIG_LLVM_CMAKE_DIR@")
+
+set(TSLANG_EXPORTED_TARGETS "@TSLANG_EXPORTS@")
+set(TSLANG_CMAKE_DIR "@TSLANG_CONFIG_CMAKE_DIR@")
+set(TSLANG_INCLUDE_DIRS "@TSLANG_CONFIG_INCLUDE_DIRS@")
+
+# Provide all our library targets to users.
+@TSLANG_CONFIG_INCLUDE_EXPORTS@
